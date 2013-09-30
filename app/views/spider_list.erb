@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Monocle</title>
+  <meta name="keywords" content="monocle,news,tech">
+  <meta name="description" content="Monocle is a community focused around technology and startups">
+
+  <link rel="alternate" type="application/rss+xml" href="/feed" />
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+  <link rel="alternate" type="application/rss+xml" href="/feed" />
+</head>
+<body>
+  <h1>Monocle</h1>
+
+  <% @posts.each do |post| %>
+    <h2><a href="/posts/<%= post.slug %>"><%= post.title %></a></h2>
+  <% end %>
+</body>
+</html>

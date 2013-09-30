@@ -1,0 +1,9 @@
+<nav>
+  <a href="/feed" class="feed" title="RSS feed"></a>
+</nav>
+
+<div class="wrapper">
+  <article class="splash">
+    <h1>Monocle</h1>
+  </article>
+</div>

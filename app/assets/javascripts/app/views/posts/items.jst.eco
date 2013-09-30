@@ -1,0 +1,7 @@
+<% for post in @posts: %>
+  <%- @view('posts/item')(post: post) %>
+<% end %>
+
+<% unless @posts.length: %>
+  <h3 class="empty">No Posts</h3>
+<% end %>

@@ -1,0 +1,102 @@
+@import '../mixins'
+
+.comments-list {
+  .comment {
+    padding: 1px 0 0 30px
+    position: relative
+
+    .avatar {
+      display: block
+      left: 0
+      position: absolute
+      top: 0
+
+      img {
+        border-radius: 3px
+        display: block
+        height: 22px
+        width: 22px
+      }
+
+      &:before {
+        content: ""
+        border-radius: 3px
+        box-shadow: rgba(0, 0, 0, 0.08) 0 1px 1px inset
+        display: block
+        height: 22px
+        width: 22px
+        position: absolute
+        left: 0
+        top: 0
+      }
+    }
+
+    .meta {
+      user-select: none
+    }
+
+    .user a {
+      color: #D32626
+      font-weight: 700
+    }
+
+    .body {
+      padding: 2px 0 20px
+    }
+
+    .body ul,
+    .body pre {
+      margin: 0 0 7px 0
+    }
+
+    .body p {
+      margin-bottom: 7px
+
+      &:last-child {
+        margin-bottom: 0
+      }
+    }
+
+    .body blockquote {
+      margin: 7px 0 7px 0
+      padding-left: 10px
+      border-left: 2px solid #EBEEF2
+    }
+
+    .body a {
+      text-decoration: underline
+      cursor: pointer
+    }
+
+    .comments-new-threaded,
+    .comments-edit {
+      display: none
+    }
+
+    &.editing {
+      > .body {
+        display: none
+      }
+
+      > .comments-edit {
+        display: block
+      }
+    }
+
+    &.replying {
+      > .comments-new-threaded {
+        display: block
+      }
+    }
+
+    &.thread {
+      box-shadow: #EBEEF2 0 -1px 0 inset
+      margin: 30px 30px 5px 30px
+
+      &:last-child {
+        box-shadow: none
+        margin-bottom: 0
+      }
+    }
+  }
+}

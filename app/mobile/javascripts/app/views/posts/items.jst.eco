@@ -1,0 +1,11 @@
+<ul class="tableview tableview-links">
+  <% for post in @posts: %>
+    <%- @view('posts/item')(post: post) %>
+  <% end %>
+
+  <% if @posts.length: %>
+    <li class="item tappable">
+      <a class="next">More…</a>
+    </li>
+  <% end %>
+</ul>

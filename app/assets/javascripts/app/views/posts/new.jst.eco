@@ -1,0 +1,20 @@
+<header>
+  <h2>New Post</h2>
+</header>
+
+<form>
+  <article>
+    <input type="url" name="url" placeholder="URL" required autofocus>
+    <input type="text" name="title" placeholder="Title" required>
+
+    <% if @scheduled: %>
+      <input type="datetime-local" name="scheduled_at">
+    <% end %>
+
+    <p>Posts are lonely without comments &ndash; why not start the discussion?</p>
+  </article>
+
+  <footer>
+    <button type="submit" class="btn">Create</button>
+  </footer>
+</form>

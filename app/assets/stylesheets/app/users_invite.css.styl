@@ -1,0 +1,29 @@
+@import '../mixins'
+
+.overlay .panel.users-invite {
+  width: 320px
+
+  p {
+    margin-bottom: 8px
+
+    &:last-child {
+      margin-bottom: 0
+    }
+  }
+
+  button {
+    height: 32px
+    font-size: 13px
+    padding: 0 12px
+  }
+
+  form {
+    hbox()
+    padding: 12px 0 8px 0
+
+    input {
+      box-flex: 1
+      margin-right: 8px
+    }
+  }
+}

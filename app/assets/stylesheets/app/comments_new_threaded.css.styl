@@ -1,0 +1,38 @@
+@import '../mixins'
+
+.comments-new-threaded {
+  position: relative
+  padding: 15px 0 25px 0
+
+  section {
+    position: relative
+  }
+
+  &:after {
+    content: ''
+    position: absolute
+    left: 0
+    right: 0
+    top: -4px
+    height: 4px
+    box-shadow: #ebeef2 0 -1px 0 inset, rgba(0,0,0,0.03) 0 1px 1px
+  }
+
+  textarea {
+    min-height: 80px
+  }
+
+  button {
+    position: absolute
+    bottom: 8px
+    right: 7px
+    box-shadow: none
+    opacity: 0.6;
+
+    transition: 200ms linear opacity
+
+    &:hover {
+      opacity: 1
+    }
+  }
+}

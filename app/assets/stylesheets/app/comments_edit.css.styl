@@ -1,0 +1,28 @@
+@import '../mixins'
+
+.comments-edit {
+  position: relative
+  padding: 15px 0 25px 0
+
+  section {
+    position: relative
+  }
+
+  textarea {
+    min-height: 80px
+  }
+
+  button {
+    position: absolute
+    bottom: 8px
+    right: 7px
+    box-shadow: none
+    opacity: 0.6;
+
+    transition: 200ms linear opacity
+
+    &:hover {
+      opacity: 1
+    }
+  }
+}

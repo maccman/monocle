@@ -1,0 +1,98 @@
+@import '../mixins'
+
+.mobile .comments section {
+  header {
+    padding: 15px;
+    user-select: none;
+    position: relative
+    max-width: 590px
+    margin: 0 auto
+
+    h1 {
+      font-family: "Helvetica Neue"
+      font-weight: 700
+      color: #3D525E
+      font-size: 15px
+
+      line-height: 1.2em;
+      margin: 0;
+      padding: 0;
+
+      a {
+        display: block
+        color: #3D525E
+        text-decoration: none;
+      }
+
+      span {
+        color: #385487;
+        font-size: 13px;
+        font-weight: bold;
+        text-shadow: 0 1px rgba(255,255,255,.85)
+      }
+    }
+
+    .meta, .summary {
+      display: block;
+      font-size: 13px;
+      color: #77808C;
+      text-shadow: 0 1px rgba(255,255,255,.85)
+      line-height: 1.2em;
+    }
+
+    .summary {
+      margin: 10px 0 5px 0
+
+      a {
+        color: #385487;
+      }
+    }
+
+    .meta-point {
+      display: block
+    }
+  }
+
+  section.thread {
+    min-height: 258px;
+    font-size: 13px;
+    overflow: hidden;
+    padding: 0 15px 0 15px;
+
+    ul {
+      margin: 0 auto;
+      padding: 0;
+      list-style: none;
+      max-width: 590px
+    }
+
+    li {
+      margin-bottom: 10px
+      border-bottom: 1px solid #D7E1E7;
+    }
+
+    .meta {
+      hbox()
+      box-pack: justify
+    }
+
+    .meta-point.user {
+      color: #D32626;
+      font-weight: bold
+    }
+
+    .meta-point.discuss {
+      text-align: right
+      display: block
+    }
+
+    time {
+      font-size: 12px
+      color: #a1a8b2;
+    }
+
+    p {
+      margin: 8px 0;
+    }
+  }
+}

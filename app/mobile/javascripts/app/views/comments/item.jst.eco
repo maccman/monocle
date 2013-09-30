@@ -1,0 +1,28 @@
+<li
+  class="item comment <%= if @comment.get('parent_id'): %>child<% end %>"
+  data-id="<%= @comment.get('id') %>">
+
+  <div class="meta">
+    <span class="meta-point user">
+      <a data-user-id="<%= @comment.get('user_id') %>">
+        <%= @comment.get('user_handle') %>
+      </a>
+    </span>
+
+    <time class="meta-point discuss"><%= @comment.ago() %></time>
+  </div>
+
+  <div class="body">
+    <p>
+      <% if @comment.get('formatted_body'): %>
+        <%- @comment.get('formatted_body') %>
+      <% else: %>
+        <%= @comment.get('body') %>
+      <% end %>
+    </p>
+  </div>
+
+  <% for child in @comment.get('children'): %>
+    <%- @view('comments/item')(comment: child) %>
+  <% end %>
+</li>

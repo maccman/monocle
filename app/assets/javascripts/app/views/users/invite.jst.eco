@@ -1,0 +1,52 @@
+<header>
+  <h2>Spread the word</h2>
+</header>
+
+<article>
+  <p>
+    Invites are like fairy dust. They're special, and should only be sprinkled sparingly.
+    Invite people who's input you respect, and who's opinion you want to hear more of.
+  </p>
+
+  <% if @user.get('invites_count'): %>
+    <p>
+      You have
+      <strong>
+        <%= @user.get('invites_count') %>
+        <%= @helpers.pluralize 'invite', @user.get('invites_count') %>
+      </strong>
+      left.
+    </p>
+
+    <p>
+      Enter an email below, and we'll send them an entry pass to Monocle.
+    </p>
+
+    <form>
+      <% if @full: %>
+        <input type="email" name="email"
+          placeholder="test@example.com"
+          autofocus>
+
+        <input type="text" name="twitter"
+          placeholder="@twitter">
+
+        <input type="text" name="github"
+          placeholder="@github">
+      <% else: %>
+        <input type="email" name="email"
+          placeholder="test@example.com"
+          autofocus
+          required>
+      <% end %>
+
+      <button type="submit" class="btn">Invite</button>
+    </form>
+  <% else: %>
+    <p>
+      Sorry, you don't have any invites right now.
+      However, we do issue more periodically -
+      check back soon!
+    </p>
+  <% end %>
+</article>

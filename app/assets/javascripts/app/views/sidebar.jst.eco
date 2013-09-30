@@ -1,0 +1,39 @@
+<header>
+  <a class="logo landing">monocle</a>
+
+  <nav>
+    <div class="clip">
+      <div class="clipped">
+        <a class="popular active" data-state="popular">Hot</a>
+        <a class="newest" data-state="newest">New</a>
+        <span class="sep"></span>
+        <input type="search" tabindex="1" incremental>
+      </div>
+    </div>
+
+    <a class="search"></a>
+  </nav>
+</header>
+
+<section class="list posts-list posts-popular state" data-state="popular">
+</section>
+
+<section class="list posts-list posts-newest state" data-state="newest">
+</section>
+
+<section class="list posts-list posts-search state" data-state="search">
+</section>
+
+<footer>
+  <% if avatar_url = @user?.get('avatar_url'): %>
+    <a class="profile avatar-btn left" title="Account">
+      <div class="avatar" style="background-image:url(<%= avatar_url %>)"></div>
+      <div class="config btn"></div>
+    </a>
+  <% else: %>
+    <a class="config profile btn left" title="Account"></a>
+  <% end %>
+
+  <span></span>
+  <a class="add btn newPost right" title="New post"></a>
+</footer>

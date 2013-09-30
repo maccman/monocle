@@ -1,0 +1,34 @@
+<li class="item tappable" data-id="<%= @post.get('id') %>">
+  <a href="<%= @post.get('url') %>">
+    <h5 class="title <% if @post.get('visited'): %>visited<% end %>">
+      <%= @post.get('title') %>
+    </h5>
+
+    <div class="meta">
+      <span class="meta-point domain">
+        <%= @post.get('domain') %>
+      </span>
+
+      <span class="meta-point votes">
+        <span class="vote <% if @post.get('voted'): %>voted<% end %>">
+          <%= @post.get('votes') %>
+        </span>
+        <%= @helpers.pluralize('point', @post.get('votes')) %>
+        by
+        <%= @post.get('user_handle') %>
+      </span>
+
+      <!--
+      <span class="meta-point discuss">
+        <time title="<%= @post.get('created_at') %>"><%= @post.ago() %></time>
+        · <%= @post.get('comments_count') %>
+          <%= @helpers.pluralize('comment', @post.get('comments_count')) %>
+      </span>
+      -->
+    </div>
+  </a>
+
+  <a class="more">
+    <span></span>
+  </a>
+</li>

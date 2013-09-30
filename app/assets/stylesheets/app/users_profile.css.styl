@@ -1,0 +1,110 @@
+@import '../mixins'
+
+@keyframes loading-sprite {
+  0% { background-position: 0 0; }
+  8.33% { background-position: 0 -20px; }
+  16.67% { background-position: 0 -40px; }
+  25% { background-position: 0 -60px; }
+  33.33% { background-position: 0 -80px; }
+  41.67% { background-position: 0 -100px; }
+  50% { background-position: 0 -120px; }
+  58.33% { background-position: 0 -140px; }
+  66.67% { background-position: 0 -160px; }
+  75% { background-position: 0 -180px; }
+  83.33% { background-position: 0 -200px; }
+  91.67% { background-position: 0 -220px; }
+  100% { background-position: 0 0; }
+}
+
+.overlay .panel.users-profile {
+  .loading {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    height: 20px;
+    width: 20px;
+    margin: -10px 0 0 -10px
+
+    user-select: none;
+    pointer-events: none;
+
+    background: transparent url(/mobile/ios/activity-indicator.png) no-repeat;
+    background-size: 20px auto;
+    animation: loading-sprite 1s step-start infinite;
+  }
+
+  .avatar {
+    display: block
+    position: relative
+
+    img {
+      border-radius: 3px
+      display: block
+      height: 48px
+      width: 48px
+    }
+
+    &:before {
+      content: ""
+      border-radius: 3px
+      box-shadow: rgba(0, 0, 0, 0.08) 0 1px 1px inset
+      display: block
+      height: 48px
+      width: 48px
+      position: absolute
+      left: 0
+      top: 0
+    }
+  }
+
+  .list {
+    max-height: 260px
+    overflow-y: auto
+    position: relative
+  }
+
+  .list.posts {
+    min-height: 100px
+  }
+
+  section.info {
+    hbox()
+
+    .meta {
+      margin-left: 15px
+      box-flex: 1
+
+      span {
+        display: block
+      }
+    }
+  }
+
+  article {
+    h2 {
+      font-family: "Helvetica Neue", Helvetica, Arials, sans-serif
+      font-size: 12px
+      font-weight: 700
+      text-transform: uppercase
+      position: relative
+      line-height: 40px
+      margin: 25px 0 0 63px
+      padding: 0
+
+      &:after {
+        content: ''
+        position: absolute
+        left: 0
+        right: 0
+        bottom: 0
+        height: 4px
+        box-shadow: #ebeef2 0 -1px 0 inset, rgba(0,0,0,0.03) 0 1px 1px
+      }
+    }
+
+    .list .item {
+      margin-left: 65px
+      padding: 10px 0
+    }
+  }
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<% if settings.production? %>
+<html manifest="/mobile/manifest.appcache">
+<% else %>
+<html>
+<% end %>
+<head>
+  <meta charset="utf-8">
+  <title>Monocle</title>
+
+  <meta name="referrer" content="always"/>
+
+  <meta name="apple-mobile-web-app-title" content="Monocle">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/mobile/icons/touch-icon-144.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/mobile/icons/touch-icon-72.png">
+  <link rel="apple-touch-icon-precomposed" href="/mobile/icons/touch-icon.png">
+
+  <link rel="alternate" type="application/rss+xml" href="/feed" />
+
+  <link rel="stylesheet" type="text/css" href="<%= mobile_path 'application.css' %>">
+  <script src="<%= mobile_path 'application.js' %>"></script>
+  <script defer src="/setup.js"></script>
+</head>
+<body>
+</body>
+</html>

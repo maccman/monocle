@@ -1,0 +1,11 @@
+<header>
+  <h2>
+    <a href="<%= @post.get('url') %>">
+      <%= @post.get('title') %>
+    </a>
+  </h2>
+</header>
+
+<article>
+  <iframe seamless src="<%= @post.uri('body') %>"></iframe>
+</article>

@@ -1,0 +1,103 @@
+@import '../mixins'
+
+.app .posts-list,
+.overlay .posts-list {
+  h3.empty {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center
+    margin: 15px 0
+  }
+
+  .item {
+    box-shadow: #D7E1E7 0 -1px 0 inset
+    cursor: pointer
+    display: block
+    padding: 10px 16px
+    overflow: hidden
+    position: relative
+    white-space: nowrap;
+
+    section {
+      display: inline-block
+    }
+
+    .title {
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 700
+      color: #3D525E
+      font-size: 15px
+      white-space: normal
+      padding-right: 45px
+
+      a {
+        color: #3D525E
+
+        &:hover {
+          color: #D32626
+          text-decoration: none
+        }
+
+        &:visited {
+          color: lighten(#757F8C, 10%)
+        }
+      }
+
+      &.visited a {
+        color: lighten(#757F8C, 10%)
+      }
+    }
+
+    &:hover .title a {
+      color: #D32626
+      text-decoration: none
+    }
+
+    .index {
+      vertical-align: top
+      position: relative
+      left: -1px
+
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 700
+      white-space: normal
+
+      font-size: 14px
+      color: #77808C
+    }
+
+    time {
+      color: #77808C
+      font-size: 11px
+      font-weight: 700
+      position: absolute
+      right: 16px
+      top: 12px
+    }
+
+    .meta-point {
+      font-size: 12px
+      color: #77808C
+
+      a {
+        color: #77808C
+      }
+
+      &:after {
+        content: ' · '
+        font-size: 13px
+        color: #77808C
+        line-height: 1.7em
+      }
+
+      &:last-child:after {
+        display: none
+      }
+    }
+
+    &.active {
+      background-color: #F8FAFB
+    }
+  }
+}

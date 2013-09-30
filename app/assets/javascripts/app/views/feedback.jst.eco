@@ -1,0 +1,12 @@
+<header>
+  <h2>Feedback</h2>
+</header>
+<form>
+  <article>
+    <input type="email" placeholder="Email (optional)" value="<%= @user?.get('email') %>" autofocus>
+    <textarea required></textarea>
+  </article>
+  <footer>
+    <button type="submit" class="btn">Send Feedback</button>
+  </footer>
+</form>

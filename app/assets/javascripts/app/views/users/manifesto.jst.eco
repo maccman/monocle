@@ -1,0 +1,35 @@
+<header>
+  <h2>monocle manifesto</h2>
+</header>
+
+<article>
+  <% if @user: %>
+    <p>Welcome <strong><%= @user.get('name') %></strong>,</p>
+  <% end %>
+
+  <p>
+    Monocle is an upbeat and positive community with a focus on technology,
+    startups and frankly anything that appeals to the inquisitive mind.
+  </p>
+
+  <p>
+    If someone has invited you to join Monocle, it means they respect your opinion
+    and want to hear your input. Likewise, if you're issuing an invitation,
+    bear in mind that the people you invite, and their contributions, reflect
+    on you.
+  </p>
+
+  <p>
+    Comments should only add to the discussion, and please limit any criticism
+    to the constructive variety.
+  </p>
+
+  <p>
+    Monocle is a place for like-minded individuals to revel in facts and information,
+    encourage innovation, and ultimately better each other.
+  </p>
+</article>
+
+<footer>
+  <button class="btn close">Get started</button>
+</footer>

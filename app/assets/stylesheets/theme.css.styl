@@ -1,0 +1,292 @@
+@import 'mixins'
+
+@font-face {
+  font-family: 'Lily Script One';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Lily Script One'), local('LilyScriptOne-Regular'), url(https://themes.googleusercontent.com/static/fonts/lilyscriptone/v1/uPWsLVW8uiXqIBnE8ZwGPAaS65eljNVkG0R6HbhLwtY.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), local('OpenSans'), url(http://themes.googleusercontent.com/static/fonts/opensans/v6/cJZKeOuBrn4kERxqtaUH3bO3LdcAZYWl9Si6vvxL-qU.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Open Sans Bold'), local('OpenSans-Bold'), url(http://themes.googleusercontent.com/static/fonts/opensans/v6/k3k702ZOKiLJc3WVjuplzKRDOzjiPcYnFooOUGCOsRk.woff) format('woff');
+}
+
+body, html {
+  height: 100%
+  margin: 0
+  padding: 0
+  overflow: hidden
+}
+
+a img {
+  border: none
+}
+
+article, aside, details, figcaption, figure, footer,
+header, hgroup, menu, nav, section, summary {
+  display: block
+}
+
+body {
+  -webkit-font-smoothing: antialiased
+  font-smoothing: antialiased
+  background: #F8FAFB
+  color: #4b525b
+  font: 13px/1.7em "Helvetica Neue", Helvetica, Arials, sans-serif
+  overflow: hidden
+  position: absolute
+  left: 0
+  bottom: 0
+  right: 0
+  top: 0
+}
+
+* {
+  -webkit-tap-highlight-color: rgba(0,0,0,0)
+}
+
+a {
+  color: #4b525b
+  text-decoration: none
+  cursor: pointer
+
+  &:hover {
+    text-decoration: underline
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font: 23px/1.5em 'Open Sans', "Helvetica Neue", Helvetica, Arials, sans-serif
+  font-weight: 700
+  margin: 0
+  padding: 0
+}
+
+h2 {
+  font-size: 21px
+}
+
+h3 {
+  font-size: 19px
+}
+
+h4 {
+  font-size: 17px
+}
+
+h5 {
+  font-size: 15px
+}
+
+h6 {
+  font-size: 13px
+}
+
+p {
+  color: #4b525b
+  line-height: 1.6em;
+  margin: 0
+}
+
+input[type=text],
+input[type=url],
+input[type=email],
+input[type=datetime-local] {
+  appearance: none
+  box-sizing: border-box
+  display: block
+  width: 100%
+  height: 32px
+  padding: 0 10px
+  margin: 0
+  user-select: text
+
+  border-radius: 5px
+  border: 1px solid #DADFE5;
+  font: 13px "Helvetica Neue", Helvetica, Arials, sans-serif;
+  color: #4b525b
+  outline: none
+  transition: border 0.2s 0, box-shadow 0.2s 0, height 0.2s 0
+  box-shadow: rgba(0, 0, 0, 0.03) 0 1px 1px inset
+
+  &:focus {
+    outline: none
+    border-color: lighten(#D32626, 30%) lighten(#D32626, 40%) lighten(#D32626, 50%) lighten(#D32626, 40%)
+    box-shadow: inset 0 1px 0 rgba(0,0,0,0.1), 0 0 5px rgba(211, 38, 38, 0.4)
+  }
+}
+
+textarea {
+  appearance: none
+  display: block
+  width: 100%
+  margin: 0
+  padding: 10px 12px
+
+  border-radius: 5px
+  box-sizing: border-box
+  transition: border 0.3s 0 ease-in, box-shadow 0.3s 0 ease-in
+  border: 1px solid #dadfe5
+  color: #4b525b
+  font: 13px "Helvetica Neue", Helvetica, Arials, sans-serif
+  outline: 0
+  resize: vertical
+
+  &:focus, &:active {
+    outline: none
+    border-color: lighten(#D32626, 30%) lighten(#D32626, 40%) lighten(#D32626, 50%) lighten(#D32626, 40%)
+    box-shadow: inset 0 1px 0 rgba(0,0,0,0.1), 0 0 5px rgba(211, 38, 38, 0.4)
+  }
+}
+
+::-webkit-input-placeholder {
+    color: #a1a8b2
+}
+::-moz-placeholder {
+    color: #a1a8b2
+}
+
+.btn {
+  display: block
+  padding: 0 9px
+  height: 24px
+
+  background-color: #FFF
+  background-image: linear-gradient(rgba(255, 255, 255, 0), #F0F2F6 90%, #E5E8EE)
+  box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.10), inset 0px 1px 0px 0px #FFFFFF;
+
+  border-radius: 4px
+  border: 1px solid rgba(152, 164, 184, 0.8)
+  border-bottom-color: lighten(#98A4B8, 10%)
+  border-top-color: rgba(152, 164, 184, 0.6)
+  cursor: pointer
+  outline: none
+
+  color: #707885
+  line-height: 24px
+  text-shadow: 0 1px 0 #FFF
+  user-select: none
+  text-decoration: none
+  font: 12px "Helvetica Neue", Helvetica, Arials, sans-serif
+  font-weight: bold
+
+  &:hover {
+    text-decoration: none
+  }
+
+  &:not(:disabled):active {
+    background-image: linear-gradient(#E5E8EE, #F0F2F6)
+    box-shadow: rgba(0, 0, 0, 0.1) 0 1px 1px inset, rgba(255, 255, 255, 0.7) 0 1px 0
+    border-bottom-color: rgba(152, 164, 184, 0.6)
+    border-top-color: #98A4B8
+  }
+
+  &:disabled {
+    opacity: 0.6
+  }
+}
+
+.submit-btn {
+  display: block
+  height: 30px
+  padding: 0 14px
+
+  border-radius: 5px
+  border: 1px solid rgba(204, 51, 0, 0.8)
+  border-bottom-color: #C30
+  border-top-color: rgba(204, 51, 0, 0.6)
+
+  background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.08) 95%, rgba(0, 0, 0, 0.15))
+  box-shadow: rgba(0, 0, 0, 0.1) 0 1px 1px, rgba(255, 255, 255, 0.2) 0 1px 0 inset
+
+  -webkit-font-smoothing: antialiased
+  background-color: #D32626
+  color: #FFF
+  cursor: pointer
+  font: 14px "Helvetica Neue", Helvetica, Arials, sans-serif
+  font-weight: bold
+  line-height: 28px
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3)
+
+  &:active {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.08))
+    box-shadow: rgba(0, 0, 0, 0.1) 0 1px 1px inset, rgba(255, 255, 255, 0.7) 0 1px 0
+    border-bottom-color: rgba(204, 51, 0, 0.6)
+    border-top-color: #C30
+    color: rgba(255, 255, 255, 0.9)
+  }
+
+  &:disabled {
+    opacity: 0.6
+  }
+}
+
+// App
+
+.app {
+  box-shadow: #2D3440 0 0 0 1px, rgba(0, 0, 0, 0.5) 0 1px 2px, rgba(0, 0, 0, 0.5) 0 0 4px
+  background: #FFF
+  overflow: hidden
+  position: absolute
+  left: 0
+  right: 0
+  bottom: 0
+  top: 0
+}
+
+.app .vote {
+  user-select: none
+
+  &:before {
+    content: ''
+    background-image2x: '/assets/up-icon.png'
+    background-repeat: no-repeat
+    background-position: center center
+    background-size: 9px 10px
+    margin: 0 0px 0 0
+    width: 9px
+    height: 10px
+    display: inline-block
+  }
+
+  &:hover:before {
+    background-image2x: '/assets/up-icon-hover.png'
+  }
+
+  &.voted:before, &:active:before {
+    background-image2x: '/assets/up-icon-active.png'
+  }
+}
+
+// Preload images
+
+.app:after {
+  content: ''
+  position: absolute
+  pointer-events: none
+  overflow: hidden
+  left: -9999px
+  top: -9999px
+  height: 1px
+  width: 1px
+
+  background: url(/assets/up-icon.png),
+              url(/assets/up-icon-hover.png),
+              url(/assets/up-icon-active.png)
+
+  @media all and (-webkit-min-device-pixel-ratio: 1.5) {
+    background: url(/assets/up-icon@2x.png),
+                url(/assets/up-icon-hover@2x.png),
+                url(/assets/up-icon-active@2x.png)
+  }
+}

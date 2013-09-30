@@ -1,0 +1,53 @@
+@import '../mixins'
+
+.comments-new {
+  box-shadow: #EBEEF2 0 -1px 0 inset
+  background: #F8FAFB
+  position: relative
+  box-sizing: border-box
+
+  section {
+    position: relative
+    padding: 15px 30px
+  }
+
+  &:after {
+    content: ''
+    position: absolute
+    left: 0
+    right: 0
+    top: -4px
+    height: 4px
+    box-shadow: #ebeef2 0 -1px 0 inset, rgba(0,0,0,0.01) 0 1px 1px
+  }
+
+  textarea {
+    height: 38px
+    min-height: 38px
+  }
+
+  button {
+    display: none
+    position: absolute
+    bottom: 23px;
+    right: 35px;
+    box-shadow: none
+    opacity: 0.6;
+
+    transition: 200ms linear opacity
+
+    &:hover {
+      opacity: 1
+    }
+  }
+
+  form.expanded {
+    textarea {
+      min-height: 100px
+    }
+
+    button {
+      display: block
+    }
+  }
+}

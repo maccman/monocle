@@ -1,0 +1,40 @@
+<header>
+  <a class="header-button header-button-left header-back-button tappable"><button></button></a>
+</header>
+
+<div class="scroll">
+  <section>
+    <header>
+      <h1>
+        <a href="<%= @post.get('url') %>">
+          <%= @post.get('title') %>
+          <br />
+          <span class="meta-point domain">
+            <%= @post.get('domain') %>
+          </span>
+        </a>
+      </h1>
+
+      <div class="meta">
+        <span class="meta-point votes">
+          <span class="vote <% if @post.get('voted'): %>voted<% end %>">
+            <%= @post.get('votes') %>
+          </span>
+          <%= @helpers.pluralize('point', @post.get('votes')) %>
+          by
+          <%= @post.get('user_handle') %>
+        </span>
+
+        <span class="meta-point discuss">
+          <time title="<%= @post.get('created_at') %>"><%= @post.ago() %></time>
+          · <%= @post.get('comments_count') %>
+            <%= @helpers.pluralize('comment', @post.get('comments_count')) %>
+        </span>
+      </div>
+    </header>
+
+    <section class="thread">
+      <div class="activity-indicator"></div>
+    </section>
+  </section>
+</div>

@@ -1,0 +1,7 @@
+jQuery(function($){
+  var App     = require('app/index');
+  var options = <%== @options.to_json(user: current_user) %>;
+  window.app  = new App(options);
+
+  app.$el.appendTo('body');
+});

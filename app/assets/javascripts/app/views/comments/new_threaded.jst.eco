@@ -1,0 +1,6 @@
+<form>
+  <section>
+    <textarea autoexpand autofocus placeholder="Reply to the thread..."></textarea>
+    <button class="btn" type="submit" title="Command + Enter">Create</button>
+  </section>
+</form>

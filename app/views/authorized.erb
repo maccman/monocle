@@ -1,0 +1,9 @@
+<script>
+  var user = <%== current_user.to_json(user: current_user) %>;
+  window.opener.postMessage({briskAuth: true, user: user}, '*');
+
+  // Mobile clients do not like postMessage
+  setTimeout(function(){
+    window.close();
+  }, 3000);
+</script>

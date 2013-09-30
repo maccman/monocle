@@ -1,0 +1,39 @@
+<% if @post.get('icon'): %>
+  <a class="icon" href="<%= @post.get('url') %>">
+    <img src="<%= @post.get('icon') %>">
+  </a>
+<% end %>
+
+<section>
+  <h1 class="title">
+    <a href="<%= @post.get('url') %>"><%= @post.get('title') %></a>
+  </h1>
+
+  <div class="meta">
+    <span class="meta-point votes vote <% if @post.get('voted'): %>voted<% end %>">
+      <%= @post.get('votes') %>
+    </span>
+
+    <span class="meta-point domain">
+      <a href="<%= @post.get('url') %>">
+        <%= @post.get('domain') %>
+      </a>
+    </span>
+
+    <time class="meta-point discuss" title="<%= @post.get('created_at') %>">
+      <%= @post.ago() %>
+    </time>
+
+    <span class="meta-point user-handle">
+      by <a data-user-id="<%= @post.get('user_id') %>">
+        <%= @post.get('user_handle') %>
+      </a>
+    </span>
+  </div>
+
+  <% if @post.get('summary'): %>
+    <p class="summary">
+      <%= @post.truncatedSummary(500) %>
+    </p>
+  <% end %>
+</section>

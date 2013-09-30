@@ -1,0 +1,48 @@
+<header>
+  <h2><%= @user.get('handle') %></h2>
+</header>
+
+<article>
+  <section class="info">
+    <% if @user.get('avatar_url'): %>
+      <a class="avatar">
+        <img src="<%= @user.get('avatar_url') %>">
+      </a>
+    <% end %>
+
+    <div class="meta">
+      <span class="name"><%= @user.get('name') %> (<%= @user.get('karma') %>)</span>
+
+      <span class="url">
+        <a href="<%= @user.get('url') %>">
+          <%= @user.get('url') %>
+        </a>
+      </span>
+
+      <% if @user.get('twitter'): %>
+        <span class="twitter">
+          <a href="http://twitter.com/<%= @user.get('twitter') %>">
+            @<%= @user.get('twitter') %>
+          </a>
+        </span>
+      <% end %>
+
+      <% if @user.get('github'): %>
+        <span class="github">
+          <a href="http://github.com/<%= @user.get('github') %>">
+            git://<%= @user.get('github') %>
+          </a>
+        </span>
+      <% end %>
+
+      <span class="about"><%= @user.get('about') %></span>
+    </div>
+  </section>
+
+  <h2>Posts</h2>
+
+  <div class="list posts-list posts">
+    <span class="loading"></span>
+  </div>
+  <div class="list posts-list voted-posts"></div>
+</article>

@@ -1,0 +1,26 @@
+@import '../mixins'
+
+.mobile .view.posts {
+  &.loading {
+    a.next {
+      display: none
+    }
+  }
+
+  &:not(.loading) {
+    .activity-indicator {
+      display: none
+    }
+  }
+
+  header h1 {
+    text-indent: -1000px
+    overflow: hidden
+    width: 75px
+
+    background-repeat: no-repeat
+    background-position: center 13px
+    background-image: url('/mobile/logo@2x.png')
+    background-size: 75px 17px
+  }
+}

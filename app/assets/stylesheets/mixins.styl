@@ -1,0 +1,89 @@
+vendor(prop, args)
+  -webkit-{prop}: args
+  -moz-{prop}: args
+  -ms-{prop}: args
+  -o-{prop}: args
+  {prop}: args
+
+border-radius()
+  vendor('border-radius', arguments)
+
+linear-gradient()
+  add-property('background-image', '-webkit-linear-gradient(%s)' % unquote(join(', ', arguments)))
+  add-property('background-image', '-moz-linear-gradient(%s)' % unquote(join(', ', arguments)))
+  add-property('background-image', '-ms-linear-gradient(%s)' % unquote(join(', ', arguments)))
+  add-property('background-image', '-o-linear-gradient(%s)' % unquote(join(', ', arguments)))
+  s('linear-gradient(%s)' % unquote(join(', ', arguments)))
+
+box-shadow()
+  vendor('box-shadow', arguments)
+
+box-flex(s = 0)
+  vendor('box-flex', s)
+
+hbox()
+  display: -webkit-box
+  -webkit-box-orient: horizontal
+  -webkit-box-align: stretch
+  -webkit-box-pack: start
+
+  display: -moz-box
+  -moz-box-orient: horizontal
+  -moz-box-align: stretch
+  -moz-box-pack: start
+
+vbox()
+  display: -webkit-box
+  -webkit-box-orient: vertical
+  -webkit-box-align: stretch
+
+  display: -moz-box
+  -moz-box-orient: vertical
+  -moz-box-align: stretch
+
+border-box()
+  vendor('box-sizing', unquote('border-box'))
+
+transition()
+  vendor('transition', arguments)
+
+ellipsis()
+  text-overflow: ellipsis
+  overflow: hidden
+  white-space:nowrap
+
+box-pack(type = center)
+  vendor('box-pack', arguments)
+
+box-align(type = center)
+  vendor('box-align', arguments)
+
+transform(tr)
+  vendor('transform', arguments)
+
+animation()
+  vendor('animation', arguments)
+
+animation-name()
+  vendor('animation-name', arguments)
+
+animation-timing-function()
+  vendor('animation-timing-function', arguments)
+
+animation-duration()
+  vendor('animation-duration', arguments)
+
+appearance()
+  vendor('appearance', arguments)
+
+user-select()
+  vendor('user-select', arguments)
+
+background-image2x(path, w = inherit, h = inherit)
+  background-repeat: no-repeat
+  background-image: url(path)
+  @media all and (-webkit-min-device-pixel-ratio: 1.5)
+    ext = extname(path)
+    path = pathjoin(dirname(path), basename(path, ext) + '@2x' + ext)
+    background-image: url(path)
+    background-size: w h

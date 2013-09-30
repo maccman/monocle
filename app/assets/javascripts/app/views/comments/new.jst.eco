@@ -1,0 +1,6 @@
+<form>
+  <section class="wrap">
+    <textarea autoexpand placeholder="Join the conversation..."></textarea>
+    <button class="btn" type="submit" title="Command + Enter">Create</button>
+  </section>
+</form>

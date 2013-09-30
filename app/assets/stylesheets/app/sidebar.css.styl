@@ -1,0 +1,298 @@
+@import '../mixins'
+
+.app .sidebar {
+  position: absolute
+  left: 0
+  top: 0
+  bottom: 0
+
+  overflow: hidden
+  width: 415px
+  box-sizing: border-box
+  border-right: 1px solid #DADFE5
+
+  *[hidden] {
+    display: none
+  }
+
+  // Positioning
+
+  header {
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+  }
+
+  .list {
+    position: absolute
+    top: 52px
+    left: 0
+    right: 0
+    bottom: 62px
+  }
+
+  footer {
+    position: absolute
+    left: 0
+    right: 0
+    bottom: 0
+  }
+
+  // Styling
+
+  header {
+    overflow: hidden
+    height: 52px
+    line-height: 52px
+    box-shadow: inset 0 -1px 0 #D7E1E7
+  }
+
+  .logo {
+    display: block
+    float: left
+    color: #D32626
+    font-family: "Lily Script One", cursive, "Helvetica Neue", Helvetica, Arials, sans-serif
+    font-size: 24px
+    margin: 0 16px
+
+    &:hover {
+      text-decoration: none
+    }
+  }
+
+  nav {
+    float: right
+    height: 14px
+    line-height: 14px
+    margin: 19px 16px
+
+    .clip {
+      float: left
+      width: 100px
+    }
+
+    .clipped {
+      width: 207px
+      float: left
+      transition: -webkit-transform 200ms ease
+      transition: -moz-transform 200ms ease
+    }
+
+    .states {
+      float: left
+      transition: -webkit-transform 200ms ease
+      transition: -moz-transform 200ms ease
+      position: relative
+    }
+
+    a {
+      float: left
+      display: block
+      cursor: pointer
+      margin-right: 10px
+      padding-left: 15px
+      background-repeat: no-repeat
+      text-decoration: none
+      font-weight: bold
+      font-size: 12px
+      color: #9EB1BD
+      user-select: none
+    }
+
+    a.popular {
+      background-image2x: '/assets/popular-icon.png'
+      background-size: 10px 12px
+      background-position: 0 0px
+
+      &:active, &.active {
+        background-image2x: '/assets/popular-icon-active.png'
+        color: #D32626
+      }
+    }
+
+    a.newest {
+      background-image2x: '/assets/newest-icon.png'
+      background-size: 11px 12px
+      background-position: 0 1px
+
+      &:active, &.active {
+        background-image2x: '/assets/newest-icon-active.png'
+        color: #D32626
+      }
+    }
+
+    a.search {
+      width: 14px
+      height: 15px
+      padding: 0 0 0 5px
+      margin: 0
+      background-position: right 0px
+      background-repeat: no-repeat
+      background-image2x: '/assets/search-icon.png' 14px 14px
+    }
+
+    .sep {
+      float: left
+      display: block
+      position: relative
+      top: -1px
+      height: 17px
+      width: 1px
+      background: #D7E1E7
+      margin-right: 10px
+    }
+
+    input {
+      display: none
+      appearance: none
+      border: none
+      background: transparent
+      padding: 0
+      margin: 0
+      outline: none
+      box-sizing: border-box
+      height: 14px
+      line-height: 14px
+      width: 100px
+    }
+
+    &.search-active {
+      .clipped {
+        transform: translate3d(-100px, 0, 0)
+      }
+
+      input {
+        display: block
+      }
+    }
+  }
+
+  input[type="search"]::-webkit-search-decoration,
+  input[type="search"]::-webkit-search-cancel-button,
+  input[type="search"]::-webkit-search-results-button,
+  input[type="search"]::-webkit-search-results-decoration {
+    display: none;
+  }
+
+  section.state:not(.active) {
+    display: none
+  }
+
+  .list {
+    overflow-y: auto
+    -webkit-overflow-scrolling: touch
+  }
+
+  footer {
+    box-shadow: #DADFE5 0 1px 0 inset
+    padding: 18px 17px
+
+    .left {
+      float: left
+    }
+
+    .right {
+      float: right
+    }
+
+    .btn {
+      padding: 0
+      box-shadow: inset 0px 1px 0px 0px #FFFFFF
+
+      &:active {
+        box-shadow: rgba(0, 0, 0, 0.1) 0 1px 1px inset, rgba(255, 255, 255, 0.7) 0 1px 0
+      }
+    }
+
+    .btn.config:after {
+      content: ''
+      display: inline-block
+      width: 14px
+      height: 14px
+      background-image2x: '/assets/config-icon.png' 14px 15px
+      margin: 5px 9px
+    }
+
+    a.avatar-btn {
+      display: block
+      border-radius: 5px
+      box-shadow: rgba(255, 255, 255, 0.2) 0 1px 0 inset
+
+      .avatar {
+        float: left
+        height: 26px;
+        width: 32px;
+        box-shadow: rgba(0, 0, 0, 0.5) 0 0 0 1px inset, rgba(255, 255, 255, 0.3) 0 1px 0 1px inset
+        border-radius: 5px 0 0 5px;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        box-sizing: border-box
+      }
+
+      &:active {
+        .avatar {
+          box-shadow: rgba(0, 0, 0, 0.5) 0 0 0 1px inset, rgba(0, 0, 0, 0.5) 0 1px 5px 1px inset
+        }
+
+        .btn {
+          background-image: linear-gradient(#E5E8EE, #F0F2F6)
+          box-shadow: rgba(0, 0, 0, 0.1) 0 1px 1px inset, rgba(255, 255, 255, 0.7) 0 1px 0
+          border-bottom-color: rgba(152, 164, 184, 0.6)
+          border-top-color: #98A4B8
+        }
+      }
+
+      .btn {
+        float: right
+        border-radius: 0 5px 5px 0
+        border-left: 0
+        box-shadow: none
+      }
+    }
+
+    .btn.add:after {
+      content: ''
+      display: block
+      width: 14px
+      height: 14px
+      background-image2x: '/assets/add-icon.png' 14px 15px
+      margin: 5px 9px
+   }
+  }
+
+  .user-menu {
+    position: absolute
+    bottom: 50px
+    left: 12px
+  }
+
+  // Preload images
+
+  &:after {
+    content: ''
+    position: absolute
+    pointer-events: none
+    overflow: hidden
+    left: -9999px
+    top: -9999px
+    height: 1px
+    width: 1px
+
+    background: url(/assets/popular-icon.png),
+                url(/assets/popular-icon-active.png),
+                url(/assets/newest-icon.png),
+                url(/assets/newest-icon-active.png),
+                url(/assets/search-icon.png),
+                url(/assets/search-icon-hover.png)
+
+    @media all and (-webkit-min-device-pixel-ratio: 1.5) {
+      background: url(/assets/popular-icon@2x.png),
+                  url(/assets/popular-icon-active@2x.png),
+                  url(/assets/newest-icon@2x.png),
+                  url(/assets/newest-icon-active@2x.png),
+                  url(/assets/search-icon@2x.png)
+    }
+  }
+}

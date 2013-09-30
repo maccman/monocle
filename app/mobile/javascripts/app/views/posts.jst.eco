@@ -1,0 +1,16 @@
+<header>
+  <h1>monocle</h1>
+</header>
+
+<div class="scroll">
+  <section class="posts-list">
+    <ul class="tableview tableview-links">
+    </ul>
+
+    <div class="activity-indicator"></div>
+
+    <div class="item tappable">
+      <a class="next">More…</a>
+    </div>
+  </section>
+</div>

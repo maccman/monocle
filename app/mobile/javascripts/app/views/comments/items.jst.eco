@@ -1,0 +1,5 @@
+<ul>
+  <% for comment in @comments: %>
+    <%- @view('comments/item')(comment: comment) %>
+  <% end %>
+</ul>

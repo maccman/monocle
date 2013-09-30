@@ -1,0 +1,64 @@
+@import '../mixins'
+
+.app .user-menu {
+  display: block
+  padding: 6px 0
+  margin: 0
+  width: 160px
+  z-index: 500
+  box-shadow: rgba(0, 0, 0, 0.15) 0 1px 2px
+  border-radius: 5px
+  border: 1px solid #9eaabc
+  background: #FFF
+  list-style: none
+  position: absolute
+
+  a {
+    border: 1px solid transparent;
+    color: #77808c;
+    display: block;
+    font-size: 12px;
+    font-weight: bold;
+    height: 22px;
+    line-height: 22px;
+    padding: 0 10px;
+    margin: 0 -1px 0 -1px
+
+    &:hover {
+      color: #D32626
+      text-decoration: none
+    }
+  }
+
+  .divider {
+    background: #ebeef2;
+    height: 1px;
+    margin: 6px 0;
+  }
+
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 0;
+    width: 0;
+    border-top: 7px solid #9eaabc;
+    border-right: 7px solid transparent;
+    border-left: 7px solid transparent;
+    bottom: -7px;
+    left: 16px;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    display: block;
+    bottom: -6px;
+    left: 17px;
+    height: 0;
+    width: 0;
+    border-top: 6px solid white;
+    border-right: 6px solid transparent;
+    border-left: 6px solid transparent;
+  }
+}

@@ -1,0 +1,37 @@
+<a class="avatar">
+  <img src="<%= @comment.get('avatar_url') %>">
+</a>
+
+<div class="meta">
+  <span class="meta-point votes vote <% if @comment.get('voted'): %>voted<% end %>">
+    <%= @comment.get('votes') %>
+  </span>
+
+  <span class="meta-point user">
+    <a data-user-id="<%= @comment.get('user_id') %>">
+      <%= @comment.get('user_handle') %>
+    </a>
+  </span>
+
+  <time class="meta-point discuss" title="<%= @comment.get('created_at') %>"><%= @comment.ago() %></time>
+
+  <% if @comment.canReply(): %>
+    <span class="meta-point reply">
+      <a>reply</a>
+    </span>
+  <% end %>
+
+  <% if @user and @comment.canEdit(@user): %>
+    <span class="meta-point edit">
+      <a>edit</a>
+    </span>
+  <% end %>
+</div>
+
+<div class="body">
+  <% if @comment.get('formatted_body'): %>
+    <%- @comment.get('formatted_body') %>
+  <% else: %>
+    <p><%= @comment.get('body') %></p>
+  <% end %>
+</div>

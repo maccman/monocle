@@ -1,0 +1,32 @@
+<script src="//use.typekit.net/hht8dhg.js"></script>
+<script>try{Typekit.load();}catch(e){}</script>
+<script src="/assets/jquery.js"></script>
+
+<script>
+  jQuery(function(){
+    // Remove leading h tag, if it exists
+    var $main = $('body > #main');
+    $main.find('p:first').prev('h1, h2, h3, h4').remove();
+
+    // Give the iframe focus
+    window.focus();
+
+    $(window).on('keydown', function(e){
+      // Close on esc or 'r' key
+      if (e.which === 27 || e.which == 82) {
+        e.preventDefault()
+        window.parent.postMessage({
+          briskClose: true
+        }, '*');
+      }
+    });
+  });
+</script>
+
+<link rel="stylesheet" type="text/css" href="<%= asset_path 'body.css' %>">
+
+<base href="<%= @post.url %>" target="_parent" />
+
+<article id="main">
+  <%== @post.safe_body %>
+</article>

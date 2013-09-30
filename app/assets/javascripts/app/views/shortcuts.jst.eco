@@ -1,0 +1,21 @@
+<header>
+  <h2>Keyboard Shortcuts</h2>
+</header>
+
+<article>
+  <ul>
+    <lh>General</lh>
+    <li><code>enter</code> Navigate to post.</li>
+    <li><code>cmd + enter</code> Navigate in new window.</li>
+    <li><code>r</code> Readability.</li>
+    <li><code>u</code> Upvote.</li>
+    <li><code>n</code> New post.</li>
+    <li><code>shift + ?</code> You're looking at it.</li>
+  </ul>
+
+  <ul>
+    <lh>Sidebar</lh>
+    <li><code>down arrow / j</code> Down the sidebar.</li>
+    <li><code>up arrow / k</code> Up the sidebar.</li>
+  </ul>
+</article>

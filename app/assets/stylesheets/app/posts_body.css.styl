@@ -1,0 +1,45 @@
+@import '../mixins'
+
+.overlay .posts-body {
+  top: 40px
+  right: 40px
+  bottom: 40px
+  left: 40px
+  margin: 0 auto
+  width: auto
+  max-width: 700px
+  vbox()
+
+  header {
+    overflow: hidden
+  }
+
+  header h2 {
+    a {
+      color: #77808C
+
+      &:hover {
+        color: #2d3440
+        text-decoration: none
+      }
+    }
+  }
+
+  article {
+    box-flex: 1
+    vbox()
+    margin: 0
+  }
+
+  iframe[seamless] {
+    background-color: transparent;
+    border: 0px none transparent;
+    padding: 0px;
+    overflow: hidden;
+  }
+
+  iframe {
+    box-flex: 1
+    border-radius: 0 0 5px 5px
+  }
+}

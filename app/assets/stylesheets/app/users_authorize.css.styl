@@ -1,0 +1,97 @@
+@import '../mixins'
+
+.overlay .panel.users-authorize,
+.overlay .panel.users-invite-authorize {
+  width: 240px
+  background-image: linear-gradient(rgba(255, 255, 255, 0), #f0f2f6 95%, #e5e8ee)
+
+  a.twitter, a.github {
+    position: relative
+    display: block
+    width: 130px
+    margin: 0 auto
+
+    border-radius: 5px
+    box-shadow: rgba(0, 0, 0, 0.1) 0 1px 1px, rgba(255, 255, 255, 0.2) 0 1px 0 inset
+    font-smoothing: antialiased
+    background-color: #00aced
+    cursor: pointer
+    display: block
+    font: 12px "Helvetica Neue", Helvetica, Arials, sans-serif
+    font-weight: bold
+    height: 30px
+    padding: 0 14px
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3)
+    color: #FFF
+    line-height: 30px
+    text-decoration: none
+    padding-left: 38px
+
+    &:hover {
+      background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.15))
+    }
+
+    &:active {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.08))
+      box-shadow: rgba(0, 0, 0, 0.1) 0 1px 1px inset, rgba(255, 255, 255, 0.7) 0 1px 0
+    }
+  }
+
+  a.twitter {
+    background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.08) 95%, rgba(0, 0, 0, 0.15))
+    border: 1px solid rgba(0, 94, 128, 0.8)
+    border-bottom-color: #005e80
+    border-top-color: rgba(0, 94, 128, 0.6)
+    margin-bottom: 10px
+
+    &:active {
+      border-bottom-color: rgba(0, 94, 128, 0.6)
+      border-top-color: #005e80
+    }
+  }
+
+  a.github {
+    background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.08) 95%, rgba(0, 0, 0, 0.15))
+    background-color: #5e6263
+    border: 1px solid rgba(31, 32, 33, 0.8)
+    border-bottom-color: #1f2021
+    border-top-color: rgba(31, 32, 33, 0.6)
+
+    &:active {
+      border-bottom-color: rgba(31, 32, 33, 0.6)
+      border-top-color: #1f2021
+    }
+  }
+
+  a:before {
+    display: block
+    height: 18px
+    width: 18px
+    position: absolute
+    left: 7px
+    top: 5px
+  }
+
+  a.twitter:before {
+    content: url(/assets/twitter-logo.png)
+  }
+
+  a.github:before {
+    content: url(/assets/github-logo.png)
+  }
+
+  // Separator
+  a:after {
+    content: ''
+    display: block
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0)), linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0))
+    background-size: 1px 100%, 1px 100%
+    background-position: 0px 0px, 1px 0px
+    background-repeat: no-repeat, no-repeat
+    bottom: 0
+    left: 30px
+    position: absolute
+    top: 0
+    width: 2px
+  }
+}

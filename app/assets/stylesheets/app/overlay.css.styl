@@ -1,0 +1,106 @@
+@import '../mixins'
+
+@keyframes showPanel {
+  0% {
+    opacity: 0.0
+    transform: scale(0.95) translate3d(0,100%,0)
+  }
+
+  100% {
+    opacity: 1.0
+    transform: scale(1.0) translate3d(0,0,0)
+  }
+}
+
+@keyframes hidePanel {
+  0% {
+    opacity: 1.0
+    transform: scale(1.0) translate3d(0,0,0)
+  }
+
+  100% {
+    opacity: 0.0
+    transform: scale(0.98) translate3d(0,0,0)
+  }
+}
+
+.overlay {
+  position: absolute
+  left: 0
+  top: 0
+  bottom: 0
+  right: 0
+  z-index: 9999
+
+  background: #000
+  background-image: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 100, color-stop(10%, rgba(0, 0, 0, 0)), color-stop(100%, rgba(0, 0, 0, 0.6)))
+  background-image: -webkit-radial-gradient(rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 0.6))
+  background-image: -moz-radial-gradient(rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 0.6))
+  background-image: -o-radial-gradient(rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 0.6))
+  background-image: radial-gradient(rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 0.6))
+  background-color: rgba(61, 67, 76, 0.7)
+
+  opacity: 0
+  transition: 250ms opacity linear
+
+  &.active {
+    opacity: 1
+  }
+
+  .panel {
+    min-height: 100px
+    box-sizing: border-box
+    position: absolute
+    width: 500px
+    left: 50%
+    top: 50%
+    box-shadow: rgba(0, 0, 0, 0.2) 0 3px 5px, rgba(0, 0, 0, 0.1) 0 0 8px 1px, rgba(0, 0, 0, 0.1) 0 0 0 1px
+    border-radius: 5px
+    overflow: hidden
+    background-color: #FFF
+
+    -webkit-animation-name: hidePanel
+    -webkit-animation-duration: 300ms
+    -webkit-animation-timing-function: ease
+  }
+
+  &.active .panel {
+    -webkit-animation-name: showPanel
+    -webkit-animation-duration: 500ms
+    -webkit-animation-timing-function: ease
+  }
+
+  .panel {
+    header h2 {
+      font-family: "Helvetica Neue", Helvetica, Arials, sans-serif
+      font-weight: bold
+      font-size: 15px
+      text-align: center
+      line-height: 50px
+      margin: 0 0 2px 0
+      padding: 0 10px
+      user-select: none
+      position: relative
+
+      &:after {
+        content: ''
+        position: absolute
+        left: 0
+        right: 0
+        bottom: 0
+        height: 4px
+        box-shadow: #ebeef2 0 -1px 0 inset, rgba(0,0,0,0.03) 0 1px 1px
+      }
+    }
+
+    article {
+      margin: 20px 30px
+    }
+
+    footer {
+      hbox()
+      box-pack: end
+      margin: 0 30px 30px 30px
+    }
+  }
+}

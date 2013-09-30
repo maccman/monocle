@@ -1,0 +1,6 @@
+<form>
+  <section>
+    <textarea autoexpand autofocus><%= @comment.get('body') %></textarea>
+    <button class="btn" type="submit" title="Command + Enter">Save</button>
+  </section>
+</form>

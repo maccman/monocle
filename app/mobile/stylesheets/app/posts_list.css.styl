@@ -1,0 +1,54 @@
+@import '../mixins'
+
+.mobile .posts-list {
+  li > a {
+    min-height: 70px;
+    padding: 10px
+  }
+
+  li > a:visited .title {
+    color: #757F8C
+  }
+
+  .item {
+    .title {
+      font-family: "Helvetica Neue"
+      font-weight: 700
+      color: #3D525E
+      font-size: 15px;
+      line-height: 1.3em;
+      margin: 0
+    }
+
+    .title.visited {
+      color: #757F8C
+    }
+
+    .meta {
+      display: block;
+      font-size: 13px;
+      color: #77808C;
+      line-height: 1.2em;
+    }
+
+    .meta-point {
+      display: block
+    }
+
+    .domain {
+      color: #385487;
+      font-weight: bold;
+    }
+  }
+
+  a.next {
+    cursor: pointer;
+    -webkit-touch-callout: none;
+    line-height: 3em;
+    padding: 10px;
+    display: block;
+    color: #385487;
+    text-align: center;
+    font-weight: bold;
+  }
+}

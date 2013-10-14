@@ -155,7 +155,7 @@ class Collection
       record.off('all', @recordEvent)
 
       # Remove IDs references
-      delete @cids[record]
+      delete @cids[record.getCID()]
       delete @ids[record.getID()] if record.getID()
 
       # Lastly remove record

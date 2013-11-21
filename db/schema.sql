@@ -9,28 +9,28 @@ SET check_function_bodies = false;
 SET client_min_messages = warning;
 
 --
--- Name: plpgsql; Type: EXTENSION; Schema: -; Owner: 
+-- Name: plpgsql; Type: EXTENSION; Schema: -; Owner:
 --
 
 CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
 
 
 --
--- Name: EXTENSION plpgsql; Type: COMMENT; Schema: -; Owner: 
+-- Name: EXTENSION plpgsql; Type: COMMENT; Schema: -; Owner:
 --
 
 COMMENT ON EXTENSION plpgsql IS 'PL/pgSQL procedural language';
 
 
 --
--- Name: uuid-ossp; Type: EXTENSION; Schema: -; Owner: 
+-- Name: uuid-ossp; Type: EXTENSION; Schema: -; Owner:
 --
 
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp" WITH SCHEMA public;
 
 
 --
--- Name: EXTENSION "uuid-ossp"; Type: COMMENT; Schema: -; Owner: 
+-- Name: EXTENSION "uuid-ossp"; Type: COMMENT; Schema: -; Owner:
 --
 
 COMMENT ON EXTENSION "uuid-ossp" IS 'generate universally unique identifiers (UUIDs)';
@@ -95,7 +95,7 @@ SET default_tablespace = '';
 SET default_with_oids = false;
 
 --
--- Name: comment_votes; Type: TABLE; Schema: public; Owner: Alex; Tablespace: 
+-- Name: comment_votes; Type: TABLE; Schema: public; Owner: Alex; Tablespace:
 --
 
 CREATE TABLE comment_votes (
@@ -132,7 +132,7 @@ ALTER SEQUENCE comment_votes_iid_seq OWNED BY comment_votes.iid;
 
 
 --
--- Name: comments; Type: TABLE; Schema: public; Owner: Alex; Tablespace: 
+-- Name: comments; Type: TABLE; Schema: public; Owner: Alex; Tablespace:
 --
 
 CREATE TABLE comments (
@@ -173,7 +173,7 @@ ALTER SEQUENCE comments_iid_seq OWNED BY comments.iid;
 
 
 --
--- Name: post_visits; Type: TABLE; Schema: public; Owner: Alex; Tablespace: 
+-- Name: post_visits; Type: TABLE; Schema: public; Owner: Alex; Tablespace:
 --
 
 CREATE TABLE post_visits (
@@ -210,7 +210,7 @@ ALTER SEQUENCE post_visits_iid_seq OWNED BY post_visits.iid;
 
 
 --
--- Name: post_votes; Type: TABLE; Schema: public; Owner: Alex; Tablespace: 
+-- Name: post_votes; Type: TABLE; Schema: public; Owner: Alex; Tablespace:
 --
 
 CREATE TABLE post_votes (
@@ -247,7 +247,7 @@ ALTER SEQUENCE post_votes_iid_seq OWNED BY post_votes.iid;
 
 
 --
--- Name: posts; Type: TABLE; Schema: public; Owner: Alex; Tablespace: 
+-- Name: posts; Type: TABLE; Schema: public; Owner: Alex; Tablespace:
 --
 
 CREATE TABLE posts (
@@ -270,7 +270,6 @@ CREATE TABLE posts (
     body text,
     summary text,
     tweet_id text,
-    scheduled_at timestamp without time zone,
     published_at timestamp without time zone,
     comment_count integer DEFAULT 0 NOT NULL,
     comments_count integer DEFAULT 0 NOT NULL,
@@ -304,7 +303,7 @@ ALTER SEQUENCE posts_iid_seq OWNED BY posts.iid;
 
 
 --
--- Name: schema_info; Type: TABLE; Schema: public; Owner: Alex; Tablespace: 
+-- Name: schema_info; Type: TABLE; Schema: public; Owner: Alex; Tablespace:
 --
 
 CREATE TABLE schema_info (
@@ -315,7 +314,7 @@ CREATE TABLE schema_info (
 ALTER TABLE public.schema_info OWNER TO "Alex";
 
 --
--- Name: user_invites; Type: TABLE; Schema: public; Owner: Alex; Tablespace: 
+-- Name: user_invites; Type: TABLE; Schema: public; Owner: Alex; Tablespace:
 --
 
 CREATE TABLE user_invites (
@@ -356,7 +355,7 @@ ALTER SEQUENCE user_invites_iid_seq OWNED BY user_invites.iid;
 
 
 --
--- Name: users; Type: TABLE; Schema: public; Owner: Alex; Tablespace: 
+-- Name: users; Type: TABLE; Schema: public; Owner: Alex; Tablespace:
 --
 
 CREATE TABLE users (
@@ -459,7 +458,7 @@ ALTER TABLE ONLY users ALTER COLUMN iid SET DEFAULT nextval('users_iid_seq'::reg
 
 
 --
--- Name: comment_votes_pkey; Type: CONSTRAINT; Schema: public; Owner: Alex; Tablespace: 
+-- Name: comment_votes_pkey; Type: CONSTRAINT; Schema: public; Owner: Alex; Tablespace:
 --
 
 ALTER TABLE ONLY comment_votes
@@ -467,7 +466,7 @@ ALTER TABLE ONLY comment_votes
 
 
 --
--- Name: comments_pkey; Type: CONSTRAINT; Schema: public; Owner: Alex; Tablespace: 
+-- Name: comments_pkey; Type: CONSTRAINT; Schema: public; Owner: Alex; Tablespace:
 --
 
 ALTER TABLE ONLY comments
@@ -475,7 +474,7 @@ ALTER TABLE ONLY comments
 
 
 --
--- Name: post_visits_pkey; Type: CONSTRAINT; Schema: public; Owner: Alex; Tablespace: 
+-- Name: post_visits_pkey; Type: CONSTRAINT; Schema: public; Owner: Alex; Tablespace:
 --
 
 ALTER TABLE ONLY post_visits
@@ -483,7 +482,7 @@ ALTER TABLE ONLY post_visits
 
 
 --
--- Name: post_votes_pkey; Type: CONSTRAINT; Schema: public; Owner: Alex; Tablespace: 
+-- Name: post_votes_pkey; Type: CONSTRAINT; Schema: public; Owner: Alex; Tablespace:
 --
 
 ALTER TABLE ONLY post_votes
@@ -491,7 +490,7 @@ ALTER TABLE ONLY post_votes
 
 
 --
--- Name: posts_pkey; Type: CONSTRAINT; Schema: public; Owner: Alex; Tablespace: 
+-- Name: posts_pkey; Type: CONSTRAINT; Schema: public; Owner: Alex; Tablespace:
 --
 
 ALTER TABLE ONLY posts
@@ -499,7 +498,7 @@ ALTER TABLE ONLY posts
 
 
 --
--- Name: user_invites_pkey; Type: CONSTRAINT; Schema: public; Owner: Alex; Tablespace: 
+-- Name: user_invites_pkey; Type: CONSTRAINT; Schema: public; Owner: Alex; Tablespace:
 --
 
 ALTER TABLE ONLY user_invites
@@ -507,7 +506,7 @@ ALTER TABLE ONLY user_invites
 
 
 --
--- Name: users_pkey; Type: CONSTRAINT; Schema: public; Owner: Alex; Tablespace: 
+-- Name: users_pkey; Type: CONSTRAINT; Schema: public; Owner: Alex; Tablespace:
 --
 
 ALTER TABLE ONLY users
@@ -515,112 +514,112 @@ ALTER TABLE ONLY users
 
 
 --
--- Name: comment_votes_comment_id_index; Type: INDEX; Schema: public; Owner: Alex; Tablespace: 
+-- Name: comment_votes_comment_id_index; Type: INDEX; Schema: public; Owner: Alex; Tablespace:
 --
 
 CREATE INDEX comment_votes_comment_id_index ON comment_votes USING btree (comment_id);
 
 
 --
--- Name: comment_votes_user_id_index; Type: INDEX; Schema: public; Owner: Alex; Tablespace: 
+-- Name: comment_votes_user_id_index; Type: INDEX; Schema: public; Owner: Alex; Tablespace:
 --
 
 CREATE INDEX comment_votes_user_id_index ON comment_votes USING btree (user_id);
 
 
 --
--- Name: comments_iid_index; Type: INDEX; Schema: public; Owner: Alex; Tablespace: 
+-- Name: comments_iid_index; Type: INDEX; Schema: public; Owner: Alex; Tablespace:
 --
 
 CREATE UNIQUE INDEX comments_iid_index ON comments USING btree (iid);
 
 
 --
--- Name: post_visits_post_id_index; Type: INDEX; Schema: public; Owner: Alex; Tablespace: 
+-- Name: post_visits_post_id_index; Type: INDEX; Schema: public; Owner: Alex; Tablespace:
 --
 
 CREATE INDEX post_visits_post_id_index ON post_visits USING btree (post_id);
 
 
 --
--- Name: post_visits_user_id_index; Type: INDEX; Schema: public; Owner: Alex; Tablespace: 
+-- Name: post_visits_user_id_index; Type: INDEX; Schema: public; Owner: Alex; Tablespace:
 --
 
 CREATE INDEX post_visits_user_id_index ON post_visits USING btree (user_id);
 
 
 --
--- Name: post_votes_post_id_index; Type: INDEX; Schema: public; Owner: Alex; Tablespace: 
+-- Name: post_votes_post_id_index; Type: INDEX; Schema: public; Owner: Alex; Tablespace:
 --
 
 CREATE INDEX post_votes_post_id_index ON post_votes USING btree (post_id);
 
 
 --
--- Name: post_votes_user_id_index; Type: INDEX; Schema: public; Owner: Alex; Tablespace: 
+-- Name: post_votes_user_id_index; Type: INDEX; Schema: public; Owner: Alex; Tablespace:
 --
 
 CREATE INDEX post_votes_user_id_index ON post_votes USING btree (user_id);
 
 
 --
--- Name: posts_iid_index; Type: INDEX; Schema: public; Owner: Alex; Tablespace: 
+-- Name: posts_iid_index; Type: INDEX; Schema: public; Owner: Alex; Tablespace:
 --
 
 CREATE UNIQUE INDEX posts_iid_index ON posts USING btree (iid);
 
 
 --
--- Name: posts_published_at_index; Type: INDEX; Schema: public; Owner: Alex; Tablespace: 
+-- Name: posts_published_at_index; Type: INDEX; Schema: public; Owner: Alex; Tablespace:
 --
 
 CREATE INDEX posts_published_at_index ON posts USING btree (published_at);
 
 
 --
--- Name: posts_slug_index; Type: INDEX; Schema: public; Owner: Alex; Tablespace: 
+-- Name: posts_slug_index; Type: INDEX; Schema: public; Owner: Alex; Tablespace:
 --
 
 CREATE UNIQUE INDEX posts_slug_index ON posts USING btree (slug);
 
 
 --
--- Name: posts_user_id_index; Type: INDEX; Schema: public; Owner: Alex; Tablespace: 
+-- Name: posts_user_id_index; Type: INDEX; Schema: public; Owner: Alex; Tablespace:
 --
 
 CREATE INDEX posts_user_id_index ON posts USING btree (user_id);
 
 
 --
--- Name: user_invites_code_key; Type: INDEX; Schema: public; Owner: Alex; Tablespace: 
+-- Name: user_invites_code_key; Type: INDEX; Schema: public; Owner: Alex; Tablespace:
 --
 
 CREATE UNIQUE INDEX user_invites_code_key ON user_invites USING btree (code);
 
 
 --
--- Name: user_invites_user_id_index; Type: INDEX; Schema: public; Owner: Alex; Tablespace: 
+-- Name: user_invites_user_id_index; Type: INDEX; Schema: public; Owner: Alex; Tablespace:
 --
 
 CREATE INDEX user_invites_user_id_index ON user_invites USING btree (user_id);
 
 
 --
--- Name: users_handle_index; Type: INDEX; Schema: public; Owner: Alex; Tablespace: 
+-- Name: users_handle_index; Type: INDEX; Schema: public; Owner: Alex; Tablespace:
 --
 
 CREATE INDEX users_handle_index ON users USING btree (handle);
 
 
 --
--- Name: users_iid_index; Type: INDEX; Schema: public; Owner: Alex; Tablespace: 
+-- Name: users_iid_index; Type: INDEX; Schema: public; Owner: Alex; Tablespace:
 --
 
 CREATE UNIQUE INDEX users_iid_index ON users USING btree (iid);
 
 
 --
--- Name: users_uid_index; Type: INDEX; Schema: public; Owner: Alex; Tablespace: 
+-- Name: users_uid_index; Type: INDEX; Schema: public; Owner: Alex; Tablespace:
 --
 
 CREATE UNIQUE INDEX users_uid_index ON users USING btree (uid);

@@ -9,7 +9,6 @@ Comment             = -> require('app/models/comment')
 class Post extends Model
   @key 'title', String
   @key 'url', String
-  @key 'scheduled_at', String
   @key 'user_id', String
   @key 'user_handle', String
   @url '/v1/posts'

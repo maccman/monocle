@@ -18,7 +18,6 @@ class NewPost extends Overlay
     @render()
 
   render: =>
-    @scheduled = State.hasAdminUser()
     @html(@view('posts/new')(this))
     @$form  = @$('form')
     @$url   = @$('input[name=url]')

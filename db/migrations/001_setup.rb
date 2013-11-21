@@ -56,7 +56,6 @@ Sequel.migration do
       column :body, "text"
       column :summary, "text"
       column :tweet_id, "text"
-      column :scheduled_at, "timestamp without time zone"
       column :published_at, "timestamp without time zone"
       column :comment_count, "integer", :default=>0, :null=>false
       column :comments_count, "integer", :default=>0, :null=>false

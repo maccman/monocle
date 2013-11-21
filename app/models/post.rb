@@ -26,14 +26,6 @@ module Brisk
           where(~:published_at => nil)
         end
 
-        def scheduled
-          where(published_at: nil).where {|p| p.scheduled_at > Time.current }
-        end
-
-        def scheduled_due
-          where(published_at: nil).where {|p| p.scheduled_at <= Time.current }
-        end
-
         def search(query)
           query = "%#{query}%"
           ordered.where(:title.ilike(query) | :url.ilike(query))
@@ -211,10 +203,6 @@ module Brisk
       end
 
       protected
-
-      def scheduled?
-        scheduled_at && scheduled_at >= Time.current
-      end
 
       def set_user_handle
         unless user_handle

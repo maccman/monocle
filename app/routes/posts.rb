@@ -78,11 +78,6 @@ module Brisk
         post.user   = current_user
         post.notify = true
 
-        if current_user.admin?
-          post.scheduled_at = params[:scheduled_at]
-          post.notify = false
-        end
-
         post.save!
         post.vote!(post.user)
 

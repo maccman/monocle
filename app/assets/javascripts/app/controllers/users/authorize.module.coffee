@@ -37,10 +37,6 @@ class Authorize extends Overlay
     State.set(user: user)
     State.trigger('authorized', user)
 
-    if user.get('recent')
-      ga?('send', 'event', 'user', 'signed_up')
-      mixpanel?.track('users.signed_up', user.asJSON())
-
     @callback?(user)
     @callback = null
 

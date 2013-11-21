@@ -25,10 +25,4 @@ class AppRouter extends Router
     if title = post?.get('title')
       document.title = title
 
-  # Add GA support to push state
-  navigate: (path) =>
-    super
-    ga?('send', 'pageview', page: path)
-    mixpanel?.track_pageview(path)
-
 module.exports = AppRouter

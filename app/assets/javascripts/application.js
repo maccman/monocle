@@ -26,4 +26,3 @@
 //
 // App libs v1.0
 //= require_tree ./app
-//= require_tree ./misc

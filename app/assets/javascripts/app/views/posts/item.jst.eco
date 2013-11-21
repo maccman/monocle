@@ -27,13 +27,6 @@
         <%= @post.get('user_handle') %>
       </a>
     </span>
-
-    <!--
-    <span class="meta-point discuss">
-      <%= @post.get('comments_count') %>
-      <%= @helpers.pluralize('comment', @post.get('comments_count')) %>
-    </span>
-    -->
   </div>
 </section>
 

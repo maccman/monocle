@@ -24,16 +24,6 @@ module Brisk
         mime_type :cache_manifest, 'text/cache-manifest'
       end
 
-      get '/random/on', :auth => :admin do
-        session[:randomized] = true
-        redirect '/'
-      end
-
-      get '/random/off', :auth => :admin do
-        session.delete(:randomized)
-        redirect '/'
-      end
-
       get '/mobile/off' do
         session[:nomobile] = true
         redirect '/'

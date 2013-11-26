@@ -6,9 +6,7 @@ module Brisk
           request.user_agent =~ /iPhone|iPod/
         end
 
-        def mobile?
-          ios? && !session[:nomobile]
-        end
+        alias_method :ios?, :mobile?
 
         def csrf_token
           Rack::CSRF.csrf_token(env)
@@ -22,16 +20,6 @@ module Brisk
 
         mime_type :javascript, 'application/javascript'
         mime_type :cache_manifest, 'text/cache-manifest'
-      end
-
-      get '/mobile/off' do
-        session[:nomobile] = true
-        redirect '/'
-      end
-
-      get '/mobile/on' do
-        session.delete(:nomobile)
-        redirect '/'
       end
 
       get '/assets/*' do

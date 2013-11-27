@@ -14,10 +14,6 @@ module Brisk
           order(:published_at.desc)
         end
 
-        def popular
-          ranked.where {|p| p.votes > 5 }
-        end
-
         def newest
           order(:published_at.desc)
         end
@@ -211,9 +207,7 @@ module Brisk
       end
 
       def set_published_at
-        unless scheduled?
-          self.published_at ||= Time.current
-        end
+        self.published_at ||= Time.current
       end
 
       def set_slug

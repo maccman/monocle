@@ -2,21 +2,21 @@ module Brisk
   module Routes
     class Posts < Base
       get '/v1/posts' do
-        json Post.published.popular.limit(
+        json Post.published.limit(
           params[:limit] || 30,
           params[:offset]
         )
       end
 
       get '/v1/posts/popular' do
-        json Post.published.popular.limit(
+        json Post.published.limit(
           params[:limit] || 30,
           params[:offset]
         )
       end
 
       post '/v1/posts/popular' do
-        json Post.published.popular.paginate(params[:ignore], 30)
+        json Post.published.paginate(params[:ignore], 30)
       end
 
       get '/v1/posts/newest' do
@@ -137,7 +137,7 @@ module Brisk
       end
 
       get '/feed' do
-        @posts = Post.published.popular.limit(50)
+        @posts = Post.published.limit(50)
         builder :feed
       end
     end

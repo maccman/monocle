@@ -6,7 +6,7 @@ module Brisk
           request.user_agent =~ /iPhone|iPod/
         end
 
-        alias_method :ios?, :mobile?
+        alias_method :mobile?, :ios?
 
         def csrf_token
           Rack::CSRF.csrf_token(env)
@@ -41,7 +41,7 @@ module Brisk
         content_type :javascript
 
         posts = fragment do
-          Post.published.popular.limit(25).all
+          Post.published.limit(25).all
         end
 
         @options = {
@@ -55,7 +55,7 @@ module Brisk
       end
 
       get '/', :spider => true do
-        @posts = Post.published.popular.limit(30)
+        @posts = Post.published.limit(30)
         erb :spider_list
       end
 

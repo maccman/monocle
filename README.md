@@ -10,4 +10,4 @@
   export TWITTER_KEY=123
   export TWITTER_SECRET=123
 
-  thin start -p 5001
+  thin start

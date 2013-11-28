@@ -9,7 +9,7 @@ http://monocle.io
 ### Prerequisites
 
 * Ruby 2.0
-* Postgres
+* Postgres 9.3
 * Redis
 * A GitHub app account
 * A Twitter app account

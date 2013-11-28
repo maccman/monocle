@@ -4,6 +4,8 @@ Monocle is a link and news aggregation website.
 
 http://monocle.io
 
+![Screenshot](http://maccman.github.io/monocle/screenshot.png)
+
 ### Prerequisites
 
 * Ruby 2.0

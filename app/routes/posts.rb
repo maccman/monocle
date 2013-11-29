@@ -65,7 +65,7 @@ module Brisk
         redirect post.url
       end
 
-      post '/v1/posts', :auth => :active_user do
+      post '/v1/posts', :auth => true do
         existing = Post.today.url(params[:url]).first
 
         if existing
@@ -91,7 +91,7 @@ module Brisk
         json post
       end
 
-      post '/v1/posts/:id/vote', :auth => :active_user do
+      post '/v1/posts/:id/vote', :auth => true do
         post = Post.first!(id: params[:id])
         post.vote!(current_user)
 
@@ -115,7 +115,7 @@ module Brisk
         end
       end
 
-      post '/v1/posts/:id/comments', :auth => :active_user do
+      post '/v1/posts/:id/comments', :auth => true do
         post         = Post.first!(id: params[:id])
         comment      = Comment.new
         comment.post = post

@@ -1,13 +1,11 @@
 <li><a data-name="profile">Profile</a></li>
 
-<% if @user.get('active'): %>
-  <li>
-    <a data-name="invite">
-      Invites
-      (<strong><%= @user.get('invites_count') %></strong>)
-    </a>
-  </li>
-<% end %>
+<li>
+  <a data-name="invite">
+    Invites
+    (<strong><%= @user.get('invites_count') %></strong>)
+  </a>
+</li>
 
 <li><a data-name="feedback">Feedback</a></li>
 

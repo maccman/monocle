@@ -31,15 +31,12 @@ class KeyBinding
 
   rKey: (e) =>
     return if e.metaKey or e.shiftKey
-    return unless @hasActiveUser()
     return unless @getPost()
 
     e.preventDefault()
     PostBody.open(@getPost())
 
   uKey: (e) =>
-    return unless @hasActiveUser()
-
     e.preventDefault()
     @getPost()?.vote(@getUser())
 
@@ -64,8 +61,6 @@ class KeyBinding
     Shortcuts.open()
 
   nKey: (e) =>
-    return unless @hasActiveUser()
-
     e.preventDefault()
     NewPost.open()
 
@@ -76,8 +71,5 @@ class KeyBinding
 
   getPost: =>
     State.get('post')
-
-  hasActiveUser: =>
-    State.hasActiveUser()
 
 module.exports = KeyBinding

@@ -270,6 +270,7 @@ CREATE TABLE posts (
     body text,
     summary text,
     tweet_id text,
+    scheduled_at timestamp without time zone,
     published_at timestamp without time zone,
     comment_count integer DEFAULT 0 NOT NULL,
     comments_count integer DEFAULT 0 NOT NULL,
@@ -373,13 +374,11 @@ CREATE TABLE users (
     auth json,
     created_at timestamp without time zone,
     updated_at timestamp without time zone,
-    active boolean DEFAULT false,
     admin boolean DEFAULT false,
     registered boolean,
     parent_id uuid,
     invites_count integer DEFAULT 0,
     github text,
-    activated_at timestamp without time zone,
     secret text,
     manifesto boolean DEFAULT false
 );

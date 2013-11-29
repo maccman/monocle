@@ -19,13 +19,11 @@ Sequel.migration do
       String :auth
       DateTime :created_at
       DateTime :updated_at
-      TrueClass :active, :default=>false
       TrueClass :admin, :default=>false
       TrueClass :registered
       foreign_key :parent_id, :users, :type=>String, :key=>[:id]
       Integer :invites_count, :default=>0
       String :github, :text=>true
-      DateTime :activated_at
       String :secret, :text=>true
       TrueClass :manifesto, :default=>false
 
@@ -56,6 +54,7 @@ Sequel.migration do
       String :body, :text=>true
       String :summary, :text=>true
       String :tweet_id, :text=>true
+      DateTime :scheduled_at
       DateTime :published_at
       Integer :comment_count, :default=>0, :null=>false
       Integer :comments_count, :default=>0, :null=>false

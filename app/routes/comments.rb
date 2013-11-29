@@ -6,13 +6,13 @@ module Brisk
         json comment
       end
 
-      post '/v1/comments/:id/vote', :auth => :active_user do
+      post '/v1/comments/:id/vote', :auth => true do
         comment = Comment.first!(id: params[:id])
         comment.vote!(current_user)
         json comment
       end
 
-      put '/v1/comments/:id', :auth => :active_user do
+      put '/v1/comments/:id', :auth => true do
         if current_user.admin?
           comment = Comment.first!(id: params[:id])
         else
@@ -23,7 +23,7 @@ module Brisk
         json comment
       end
 
-      post '/v1/comments', :auth => :active_user do
+      post '/v1/comments', :auth => true do
         comment      = Comment.new
         comment.user = current_user
         comment.set_fields(params, [:body, :parent_id, :post_id])

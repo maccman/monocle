@@ -5,14 +5,6 @@ module Brisk
   module Models
     class User < Sequel::Model
       dataset_module do
-        def pending
-          where(active: false)
-        end
-
-        def active
-          where(active: true)
-        end
-
         def ordered
           order(:created_at.desc)
         end
@@ -83,14 +75,6 @@ module Brisk
         auth_info[:image] || Gravatar.url(email || id)
       end
 
-      def active?
-        !!active
-      end
-
-      def pending?
-        !active
-      end
-
       def admin?
         !!admin
       end
@@ -109,10 +93,6 @@ module Brisk
 
       def activate!(invite = nil)
         invite.use!(self) if invite
-        update_all(
-          active: true,
-          activated_at: Time.now
-        )
       end
 
       def notify_activate!
@@ -191,8 +171,6 @@ module Brisk
           github: github,
           about: about,
           karma: karma,
-          active: active,
-          activated_at: activated_at,
           avatar_url: avatar_url,
           created_at: created_at
         }

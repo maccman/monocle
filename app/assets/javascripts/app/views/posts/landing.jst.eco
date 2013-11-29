@@ -1,5 +1,5 @@
 <nav>
-  <a href="/feed" class="feed" title="Monocle" onclick="(function(){var z=document.createElement('script');z.src='https://www.subtome.com/load.js';document.body.appendChild(z);})()"></a>
+  <a href="/feed" class="feed" title="Monocle" onclick="(function(){var z=document.createElement('script');z.src='https://www.subtome.com/load.js';document.body.appendChild(z);})();return false;"></a>
 </nav>
 
 <div class="wrapper">

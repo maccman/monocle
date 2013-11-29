@@ -30,6 +30,7 @@ GEM
     debugger-linecache (1.2.0)
     debugger-ruby_core_source (1.2.4)
     dedent (0.0.2)
+    dotenv (0.9.0)
     eco (1.0.0)
       coffee-script
       eco-source
@@ -154,6 +155,7 @@ DEPENDENCIES
   dalli
   debugger
   dedent
+  dotenv
   eco
   erubis
   gibbon!

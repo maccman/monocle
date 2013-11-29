@@ -1,6 +1,7 @@
 #!/usr/bin/env rake
+require 'dotenv/tasks'
 
-task :app do
+task :app => :dotenv do
   require './app'
 end
 

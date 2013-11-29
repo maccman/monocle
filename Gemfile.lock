@@ -30,6 +30,7 @@ GEM
     debugger-linecache (1.2.0)
     debugger-ruby_core_source (1.2.4)
     dedent (0.0.2)
+    dotenv (0.9.0)
     eco (1.0.0)
       coffee-script
       eco-source
@@ -41,6 +42,9 @@ GEM
       multi_json (~> 1.0)
     faraday (0.8.8)
       multipart-post (~> 1.2.0)
+    foreman (0.63.0)
+      dotenv (>= 0.7)
+      thor (>= 0.13.6)
     hashie (2.0.5)
     hike (1.2.3)
     httparty (0.11.0)
@@ -124,6 +128,7 @@ GEM
       daemons (>= 1.0.9)
       eventmachine (>= 0.12.6)
       rack (>= 1.0.0)
+    thor (0.18.1)
     tilt (1.4.1)
     treetop (1.4.14)
       polyglot
@@ -154,8 +159,10 @@ DEPENDENCIES
   dalli
   debugger
   dedent
+  dotenv
   eco
   erubis
+  foreman
   gibbon!
   i18n
   json (~> 1.7.7)

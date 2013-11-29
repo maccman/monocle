@@ -50,3 +50,20 @@ From there execute:
     user.save
 
 Now you will be able to post, comment and invite users.
+    thin start
+    
+###Extra Environment Variables
+
+####Session Secret
+	export SESSION_SECRET=supersecret
+
+####Postgres
+	export DATABASE_URL=postgres://external.db.host.com:5432/db
+
+####Memcache
+	export MEMCACHE_SERVERS=external.memcache.host.com:11211
+	export MEMCACHE_USERNAME=user
+	export MEMCACHE_PASSWORD=pass
+
+####Redis
+	export REDIS_URL=redis://pass@redis.host.com:9379

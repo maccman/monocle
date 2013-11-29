@@ -116,7 +116,7 @@ module Brisk
       end
 
       def visited?(user)
-        visted_users.include?(user)
+        visited_users.include?(user)
       end
 
       def visit!(user)

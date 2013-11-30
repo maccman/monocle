@@ -40,13 +40,13 @@ To become administrator as first time user, first start Monocle with:
 
 Login with twitter or github into Monocle, then open a terminal and open Monocle inside an IRB session with:
 
-  irb -r ./app.rb
+    irb -r ./app.rb
 
 From there execute:
 
-  user = Brisk::Models::User.first
-  user.admin = true
-  user.registered = true
-  user.save
+    user = Brisk::Models::User.first
+    user.admin = true
+    user.registered = true
+    user.save
 
 Now you will be able to post, comment and invite users.

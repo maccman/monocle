@@ -33,6 +33,22 @@ You can export them from your terminal like in the following example:
 Or you can copy the included .sample.env into a .env file and set all your
 variables there.
 
+If you've got memcache, redis or postgres elsewhere, you'll need to set some extra variables
+
+####Session Secret
+	export SESSION_SECRET=supersecret
+
+####Postgres
+	export DATABASE_URL=postgres://external.db.host.com:5432/db
+
+####Memcache
+	export MEMCACHE_SERVERS=external.memcache.host.com:11211
+	export MEMCACHE_USERNAME=user
+	export MEMCACHE_PASSWORD=pass
+
+####Redis
+	export REDIS_URL=redis://pass@redis.host.com:9379
+
 ### First time user
 To become administrator as first time user, first start Monocle with:
 
@@ -52,18 +68,6 @@ From there execute:
 Now you will be able to post, comment and invite users.
     thin start
     
-###Extra Environment Variables
+##Heroku
 
-####Session Secret
-	export SESSION_SECRET=supersecret
-
-####Postgres
-	export DATABASE_URL=postgres://external.db.host.com:5432/db
-
-####Memcache
-	export MEMCACHE_SERVERS=external.memcache.host.com:11211
-	export MEMCACHE_USERNAME=user
-	export MEMCACHE_PASSWORD=pass
-
-####Redis
-	export REDIS_URL=redis://pass@redis.host.com:9379
+If you're looking to put Monocle on Heroku then follow [Dan Jenkins' guide](http://dan-jenkins.co.uk/monocle-on-heroku/) on how to do it.

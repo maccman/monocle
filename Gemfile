@@ -25,6 +25,7 @@ gem 'memcachier'
 gem 'sanitize'
 gem 'redis'
 gem 'gibbon', :git => 'https://github.com/amro/gibbon.git'
+gem 'dotenv'
 
 group :development do
   gem 'thin'

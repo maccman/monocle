@@ -50,3 +50,22 @@ From there execute:
     user.save
 
 Now you will be able to post, comment and invite users.
+
+###Deploying to Heroku
+
+This assumes you have the [Heroku Toolbelt](https://devcenter.heroku.com/articles/heroku-command)
+
+    git clone [this repo]
+    cd [into the project directory]
+    heroku create
+    git push heroku master
+    heroku addons:add memcachier:dev
+    heroku restart
+    
+The app should load up after that, but you still need to add the Github and Twitter ENV variables for it to work
+
+    heroku config:set FACEBOOK_KEY=123
+    heroku config:set FACEBOOK_SECRET=123
+    heroku config:set TWITTER_KEY=123
+    heroku config:set TWITTER_SECRET=123
+

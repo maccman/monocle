@@ -24,7 +24,7 @@ class Sidebar extends Controller
     @on('click', '.profile', @profile)
     @on('click', '.newPost', @newPost)
     @on('click', '.landing', @landing)
-    @on('search focus', 'input[type=search]', @search)
+    @on('keyup', 'input[type=search]', @search)
     $(window).on('keydown', @keydown)
 
     State.change 'sidebar', @setState
